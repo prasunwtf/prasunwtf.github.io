@@ -182,3 +182,93 @@ hr {
         text-align: center;
     }
 }
+/* ===== DARK MODE ===== */
+body.dark {
+    background: linear-gradient(180deg, #020617, #020617);
+    color: #e5e7eb;
+}
+
+body.dark .container {
+    background: rgba(15, 23, 42, 0.95);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+}
+
+body.dark h1,
+body.dark h2 {
+    color: #e5e7eb;
+}
+
+body.dark p,
+body.dark li {
+    color: #cbd5f5;
+}
+
+body.dark hr {
+    background: linear-gradient(to right, transparent, #334155, transparent);
+}
+
+body.dark .contact a {
+    background: linear-gradient(135deg, #1e293b, #020617);
+    color: #e5e7eb;
+}
+
+body.dark .contact a i {
+    color: #a5b4fc;
+}
+
+body.dark .contact a:hover {
+    background: linear-gradient(135deg, #4f46e5, #22d3ee);
+    color: white;
+}
+/* ===== DARK MODE TOGGLE BUTTON ===== */
+.dark-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #6366f1, #22d3ee);
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 12px 30px rgba(79,70,229,0.35);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    z-index: 999;
+}
+
+.dark-toggle:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px rgba(79,70,229,0.5);
+}
+/* ===== RESUME DOWNLOAD BUTTON ===== */
+.resume-download {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.resume-download a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 26px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #22d3ee, #6366f1);
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    box-shadow: 0 18px 40px rgba(79,70,229,0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resume-download a i {
+    font-size: 18px;
+}
+
+.resume-download a:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 28px 60px rgba(79,70,229,0.5);
+}
+

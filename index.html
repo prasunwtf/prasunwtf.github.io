@@ -8,6 +8,11 @@
 
 </head>
 <body>
+
+    <button id="darkToggle" class="dark-toggle">
+    🌙 Dark Mode
+</button>
+
     <div class="container">
 
 
@@ -23,6 +28,8 @@
 
     <img src="profile.jpg" alt="Prasun Adhikari">
 </div>
+
+    
 
 
     <hr>
@@ -86,6 +93,11 @@
         <li>Willingness to Learn</li>
     </ul>
 
+    <h2>Certifications</h2>
+    <p>
+        Front-End Developer Internship - Nexon Logistics : <a href="07.pdf">Download</a>
+    </p>
+
     <h2>Contact</h2>
 
 <div class="contact">
@@ -115,13 +127,39 @@
     </a>
 </div>
 
+<div class="resume-download">
+    <a href="Prasun_Adhikari_Resume.pdf" download>
+        <i class="fas fa-file-download"></i>
+        Download Resume (PDF)
+    </a>
+</div>
 
 
-    <h2>Certifications</h2>
-    <p>
-        Front-End Developer Internship - Nexon Logistics : <a href="07.pdf">Download</a>
-    </p>
     </div>
+
+    <script>
+    const toggleBtn = document.getElementById("darkToggle");
+    const body = document.body;
+
+    // Load saved mode
+    if (localStorage.getItem("theme") === "dark") {
+        body.classList.add("dark");
+        toggleBtn.textContent = "☀️ Light Mode";
+    }
+
+    toggleBtn.addEventListener("click", () => {
+        body.classList.toggle("dark");
+
+        if (body.classList.contains("dark")) {
+            localStorage.setItem("theme", "dark");
+            toggleBtn.textContent = "☀️ Light Mode";
+        } else {
+            localStorage.setItem("theme", "light");
+            toggleBtn.textContent = "🌙 Dark Mode";
+        }
+    });
+</script>
+
 
 </body>
 </html>
