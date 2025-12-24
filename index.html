@@ -1,56 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Prasun Adhikari - Resume</title>
-    <meta charset="UTF-8">
+    <title>Prasun Adhikari</title>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta -->
+    <meta name="description" content="Prasun Adhikari - Front-End Developer, BCA Student, React Enthusiast">
+    <meta name="keywords" content="Prasun Adhikari, Front-End Developer, React Developer, BCA Student">
+    <meta name="author" content="Prasun Adhikari">
+
+    <!-- External CSS -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-</head>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></head>
 <body>
+    <!-- Dark Mode Toggle -->
+    <button id="darkToggle" class="dark-toggle" aria-label="Toggle dark mode">
+        🌙 Dark Mode
+    </button>
 
-    <button id="darkToggle" class="dark-toggle">
-    🌙 Dark Mode
-</button>
+    <main class="container">
 
-    <div class="container">
+        <!-- Header -->
+        <header class="header card">
+            <div class="header-left">
+                <h1>Prasun Adhikari</h1>
+                <p class="tagline">
+                    Front-End Developer | React Enthusiast | BCA Student
+                </p>
+                <p class="contact-info">
+                    Gangtok, Sikkim (Temp) | Jhapa, Nepal (Permanent)<br>
+                    📞 +91 8509500314 | +977 9825988602<br>
+                    ✉️ bprasun44@gmail.com
+                </p>
+            </div>
 
-
-    <div class="header">
-    <div>
-        <h1>Prasun Adhikari</h1>
-        <p>
-            Gangtok, Sikkim (Temp) | Jhapa, Nepal (Permanent)<br>
-            Phone: +91 8509500314 | +977 9825988602<br>
-            Email: bprasun44@gmail.com
-        </p>
-    </div>
-
-    <img src="profile.jpg" alt="Prasun Adhikari">
-</div>
-
-    
-
+            <div class="header-right">
+                <img src="profile.jpg" alt="Profile photo of Prasun Adhikari">
+            </div>
+        </header>
 
     <hr>
-
-    <h2>Career Objective</h2>
-    <p>
-        Motivated BCA student with a strong interest in web development and front-end technologies.
-        Seeking opportunities to apply my skills, gain real-world experience, and grow as a software professional.
-    </p>
-
-    <h2>Education</h2>
-    <p>
-        <strong>Bachelor of Computer Applications (BCA)</strong><br>
-        SRM University, Sikkim<br>
-        June 2023 - May 2026<br>
-        CGPA: 8.6
-    </p>
-    <p>
-        <strong>Senior Secondary (SLC)</strong> : 2022 - 70%<br>
-        <strong>Secondary Education (SEE)</strong> : 2020 - 82%
-    </p>
 
     <h2>Work Experience</h2>
     <p>
@@ -65,38 +57,106 @@
         <li>Collaborated with the development team</li>
     </ul>
 
-    <h2>Projects</h2>
-    <p>
-        <strong>TechFest SRMUS Website</strong> - <a href="https://www.techfestsrmus.in" target="_blank">TechFest</a> <br> 
-        Role: Web Development Helper (Individual)
-    </p>
-    <ul>
-        <li>Assisted in web development tasks</li>
-        <li>Supported front-end implementation</li>
-        <li>Technology used: React</li>
-    </ul>
 
-    <h2>Technical Skills</h2>
-    <ul>
-        <li>Programming: C, Java, Python, JavaScript</li>
-        <li>Web: HTML, CSS, React, Bootstrap</li>
-        <li>Databases: MySQL, MongoDB</li>
-        <li>Tools: Git, VS Code, MS Office</li>
-    </ul>
+     <!-- Education -->
+        <section class="card">
+            <h2>Education</h2>
 
-    <h2>Soft Skills</h2>
-    <ul>
-        <li>Communication</li>
-        <li>Problem Solving</li>
-        <li>Time Management</li>
-        <li>Teamwork</li>
-        <li>Willingness to Learn</li>
-    </ul>
+            <p>
+                <strong>Bachelor of Computer Applications (BCA)</strong><br>
+                SRM University, Sikkim<br>
+                June 2023 - May 2026<br>
+                CGPA: 8.6
+            </p>
 
-    <h2>Certifications</h2>
-    <p>
-        Front-End Developer Internship - Nexon Logistics : <a href="https://nexonlogistics.com">Nexon Logistics</a>
-    </p>
+            <p>
+                <strong>Senior Secondary (SLC)</strong> <br>
+                Kanchung Higher Secondary School, Jhapa, Nepal <br>
+                2021-2022 <br>
+                Percentage: 70%
+            </p>
+            <p>
+                <strong>Secondary Education (SEE)</strong> <br>
+                Shree Rastriya Ramaniya Adarsha Uchha Madhyamik Vidhyalaya, Jhapa, Nepal <br>
+                SEE - 2020 <br>
+                Percentage: 82%
+            </p>
+        </section>
+
+    <!-- Experience -->
+        <section class="card">
+            <h2>Work Experience</h2>
+
+            <p>
+                <strong>Front-End Developer Intern (Remote)</strong><br>
+                Nexon Logistics<br>
+                Dec 2025 – Jan 2026
+            </p>
+
+            <ul>
+                <li>Developed responsive user interfaces using modern front-end tools</li>
+                <li>Collaborated with developers to improve UI/UX consistency</li>
+                <li>Optimized components for better performance and usability</li>
+                <li>Worked with version control systems (Git)</li>
+            </ul>
+        </section>
+        <!-- Projects -->
+        <section class="card">
+            <h2>Projects</h2>
+
+            <p>
+                <strong>TechFest SRMUS Website</strong> —
+                <a href="https://www.techfestsrmus.in" target="_blank" rel="noopener noreferrer">
+                    Visit Website
+                </a><br>
+                Role: Web Development Helper (Individual)
+            </p>
+
+            <ul>
+                <li>Assisted in implementing front-end features</li>
+                <li>Worked with React components and layouts</li>
+                <li>Ensured responsive design across devices</li>
+            </ul>
+        </section>
+
+
+   <!-- Technical Skills -->
+        <section class="card">
+            <h2>Technical Skills</h2>
+
+            <ul class="skills-list">
+                <li><strong>Programming:</strong> C, Java, Python, JavaScript</li>
+                <li><strong>Web:</strong> HTML, CSS, React, Bootstrap</li>
+                <li><strong>Databases:</strong> MySQL, MongoDB</li>
+                <li><strong>Tools:</strong> Git, VS Code, MS Office</li>
+            </ul>
+        </section>
+
+
+    <!-- Soft Skills -->
+        <section class="card">
+            <h2>Soft Skills</h2>
+
+            <ul class="soft-skills">
+                <li>Effective Communication</li>
+                <li>Problem Solving</li>
+                <li>Time Management</li>
+                <li>Team Collaboration</li>
+                <li>Quick Learner</li>
+            </ul>
+        </section>
+
+     <!-- Certifications -->
+        <section class="card">
+            <h2>Certifications</h2>
+
+            <p>
+                Front-End Developer Internship —
+                <a href="https://nexonlogistics.com" target="_blank" rel="noopener noreferrer">
+                    Nexon Logistics
+                </a>
+            </p>
+        </section>
 
     <h2>Contact</h2>
 
@@ -127,14 +187,15 @@
     </a>
 </div>
 
-<div class="resume-download">
-    <a href="Prasun_Adhikari_Resume.pdf" download>
-        <i class="fas fa-file-download"></i>
-        Download Resume (PDF)
-    </a>
-</div>
+<!-- Resume Download -->
+        <section class="card resume-download">
+            <a href="Prasun_Adhikari_Resume.pdf" download>
+                <i class="fas fa-file-download"></i>
+                Download Resume (PDF)
+            </a>
+        </section>
 
-
+    </main>
     </div>
 
     <script>

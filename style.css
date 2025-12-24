@@ -5,24 +5,51 @@
     box-sizing: border-box;
 }
 
+:root{
+    --bg-1: #eef2ff;
+    --bg-2: #f9fafb;
+    --accent-1: #6366f1;
+    --accent-2: #22d3ee;
+    --text: #1e293b;
+    --muted: #334155;
+    --card-bg: rgba(255,255,255,0.97);
+    --glass: rgba(255,255,255,0.6);
+    --duration-fast: 0.25s;
+    --duration-med: 0.6s;
+    --duration-long: 0.9s;
+}
+
+/* animated background layer */
+body::before{
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(99,102,241,0.06), rgba(34,211,238,0.04), transparent 45%);
+    pointer-events: none;
+    z-index: -1;
+    animation: bgFlow 12s linear infinite;
+    mix-blend-mode: overlay;
+}
+
 /* ===== BODY ===== */
 body {
     font-family: 'Poppins', 'Segoe UI', sans-serif;
-    background: linear-gradient(180deg, #f9fafb, #eef2ff);
+    background: linear-gradient(180deg, var(--bg-2), var(--bg-1));
     min-height: 100vh;
     padding: 40px 0;
-    color: #1e293b;
+    color: var(--text);
 }
 
 /* ===== MAIN CONTAINER ===== */
 .container {
     max-width: 900px;
     margin: auto;
-    background: rgba(255, 255, 255, 0.97);
+    background: var(--card-bg);
     padding: 48px;
     border-radius: 22px;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
-    animation: floatUp 0.9s ease-out;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+    transform-origin: center;
+    animation: floatUp var(--duration-long) cubic-bezier(.2,.9,.3,1) both;
 }
 
 /* ===== HEADER ===== */
@@ -39,27 +66,35 @@ body {
     height: 140px;
     object-fit: cover;
     border-radius: 50%;
-    border: 4px solid #6366f1;
-    box-shadow: 0 14px 35px rgba(99,102,241,0.35);
-    transition: transform 0.3s ease;
+    border: 4px solid var(--accent-1);
+    box-shadow: 0 12px 30px rgba(99,102,241,0.28);
+    transition: transform var(--duration-fast) ease, box-shadow var(--duration-fast) ease;
+    animation: imgFloat 6s ease-in-out infinite;
 }
 
 .header img:hover {
-    transform: scale(1.05);
+    transform: scale(1.06) translateY(-4px);
+    box-shadow: 0 26px 60px rgba(99,102,241,0.18);
 }
 
 /* ===== HEADINGS ===== */
 h1 {
     font-size: 42px;
     margin-bottom: 6px;
-    color: #0f172a;
     letter-spacing: 0.8px;
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% 200%;
+    animation: hueShift 6s ease-in-out infinite;
+    display: inline-block;
 }
 
 h2 {
     margin-top: 42px;
     font-size: 23px;
-    color: #4f46e5;
+    color: var(--accent-1);
     position: relative;
     padding-left: 16px;
 }
@@ -80,7 +115,7 @@ p {
     margin-bottom: 12px;
     font-size: 15.6px;
     line-height: 1.85;
-    color: #334155;
+    color: var(--muted);
 }
 
 p:first-of-type {
@@ -97,8 +132,11 @@ li {
     margin-bottom: 8px;
     font-size: 15.6px;
     line-height: 1.8;
-    color: #334155;
-    transition: transform 0.25s ease, color 0.25s ease;
+    color: var(--muted);
+    transition: transform var(--duration-fast) ease, color var(--duration-fast) ease, opacity 0.45s ease;
+    opacity: 0;
+    transform: translateY(8px);
+    animation: fadeUp var(--duration-med) cubic-bezier(.2,.9,.3,1) forwards;
 }
 
 li:hover {
@@ -133,7 +171,12 @@ hr {
     color: #1e293b;
     font-weight: 500;
     box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    transition: transform var(--duration-med) ease, box-shadow var(--duration-med) ease, background var(--duration-med) ease;
+    position: relative;
+    overflow: hidden;
+    transform: translateY(8px);
+    opacity: 0;
+    animation: fadeUp var(--duration-med) cubic-bezier(.2,.9,.3,1) forwards;
 }
 
 .contact a i {
@@ -162,6 +205,29 @@ hr {
         transform: translateY(0);
         opacity: 1;
     }
+}
+
+@keyframes bgFlow{
+    0%{transform: translateX(-8%)}
+    50%{transform: translateX(8%)}
+    100%{transform: translateX(-8%)}
+}
+
+@keyframes imgFloat{
+    0%{transform: translateY(0) rotate(-1deg)}
+    50%{transform: translateY(-6px) rotate(1deg)}
+    100%{transform: translateY(0) rotate(-1deg)}
+}
+
+@keyframes hueShift{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform: translateY(8px)}
+    to{opacity:1; transform: translateY(0)}
 }
 
 /* ===== RESPONSIVE ===== */
@@ -219,6 +285,42 @@ body.dark .contact a i {
 body.dark .contact a:hover {
     background: linear-gradient(135deg, #4f46e5, #22d3ee);
     color: white;
+}
+
+/* staggered reveals for common elements */
+.container > .header{animation: fadeUp var(--duration-med) ease 0.08s both}
+.container h1{animation: fadeUp var(--duration-med) ease 0.12s both}
+.container p:first-of-type{animation: fadeUp var(--duration-med) ease 0.16s both}
+.container h2{animation: fadeUp var(--duration-med) ease 0.18s both}
+.container ul li:nth-child(1){animation-delay:0.20s}
+.container ul li:nth-child(2){animation-delay:0.28s}
+.container ul li:nth-child(3){animation-delay:0.36s}
+.container ul li:nth-child(4){animation-delay:0.44s}
+.container ul li:nth-child(5){animation-delay:0.52s}
+.contact a:nth-child(1){animation-delay:0.34s}
+.contact a:nth-child(2){animation-delay:0.42s}
+.contact a:nth-child(3){animation-delay:0.50s}
+
+/* subtle ripple on contact hover */
+.contact a::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 10% 10%, rgba(255,255,255,0.12), transparent 20%);
+    opacity: 0;
+    transition: opacity var(--duration-fast) ease;
+}
+.contact a:hover::after{opacity:1}
+
+/* resume button micro animation */
+.resume-download a{transition: transform var(--duration-fast) ease, box-shadow var(--duration-fast) ease}
+.resume-download a i{display:inline-block;transform-origin:center;transition:transform var(--duration-fast) ease}
+.resume-download a:hover i{transform:translateY(-4px) rotate(-12deg)}
+
+/* accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important}
+    body::before{display:none}
 }
 /* ===== DARK MODE TOGGLE BUTTON ===== */
 .dark-toggle {
