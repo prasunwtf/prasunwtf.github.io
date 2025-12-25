@@ -10,13 +10,43 @@
     <meta name="keywords" content="Prasun Adhikari, Front-End Developer, React Developer, BCA Student">
     <meta name="author" content="Prasun Adhikari">
 
-    <!-- External CSS -->
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></head>
-<body>
-    <!-- Dark Mode Toggle -->
+   
+
+    <!-- Certificate Popup Script -->
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("viewCert");
+    const popup = document.getElementById("certModal");
+
+    btn.addEventListener("click", function (e) {
+        const rect = btn.getBoundingClientRect();
+
+        popup.style.display = "block";
+        popup.style.top =
+    window.scrollY + rect.top - popup.offsetHeight / 2 + rect.height / 2 + "px";
+
+popup.style.left =
+    rect.left + rect.width / 2 - popup.offsetWidth / 2 + "px";
+
+    });
+
+    document.addEventListener("click", function (e) {
+        if (!popup.contains(e.target) && e.target !== btn) {
+            popup.style.display = "none";
+        }
+    });
+});
+</script>
+
+</head>
+
+
+    <body>
+    <!-- Dark Mode -->
     <button id="darkToggle" class="dark-toggle" aria-label="Toggle dark mode">
         🌙 Dark Mode
     </button>
@@ -117,6 +147,20 @@
                 <li>Worked with React components and layouts</li>
                 <li>Ensured responsive design across devices</li>
             </ul>
+
+            <p>
+                <strong>Nexon Logistics Website</strong> —
+                <a href="https://www.nexonlogistics.com" target="_blank" rel="noopener noreferrer">
+                    Visit Website
+                </a><br>
+                Role: Web Development Intern
+            </p>
+
+            <ul>
+                <li>Front-End Development & UI Design</li>
+                <li>Application Optimization & Performance Improvement</li>
+                <li>Team Collaboration & Professional Practice</li>
+            </ul>
         </section>
 
 
@@ -147,17 +191,29 @@
         </section>
 
      <!-- Certifications -->
-        <section class="card">
-            <h2>Certifications</h2>
+<section class="card">
+    <h2>Certifications</h2>
 
-            <p>
-                Front-End Developer Internship —
-                <a href="https://nexonlogistics.com" target="_blank" rel="noopener noreferrer">
-                    Nexon Logistics
-                </a>
-            </p>
-        </section>
+    <p>
+        Front-End Developer Internship —
+        <a href="https://nexonlogistics.com" target="_blank" rel="noopener noreferrer">
+            Nexon Logistics
+        </a>
+        |
+        <a href="javascript:void(0)" id="viewCert">Click to view</a>
 
+    </p>
+</section>
+
+<!-- Certificate Popup -->
+<div id="certModal" class="cert-inline">
+    <img src="Internship_nexon.png" alt="Internship Certificate">
+</div>
+
+
+
+    <!-- Contact Information -->
+     <section class="card">
     <h2>Contact</h2>
 
 <div class="contact">
@@ -186,6 +242,7 @@
         GitHub
     </a>
 </div>
+     </section>
 
 <!-- Resume Download -->
         <section class="card resume-download">
