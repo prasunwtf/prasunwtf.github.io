@@ -14,270 +14,226 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-   
-
     <!-- Certificate Popup Script -->
     <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const btn = document.getElementById("viewCert");
-    const popup = document.getElementById("certModal");
+    document.addEventListener("DOMContentLoaded", function () {
+        const btn = document.getElementById("viewCert");
+        const popup = document.getElementById("certModal");
 
-    btn.addEventListener("click", function (e) {
-        const rect = btn.getBoundingClientRect();
+        btn.addEventListener("click", function () {
+            const rect = btn.getBoundingClientRect();
+            popup.style.display = "block";
+            popup.style.top = window.scrollY + rect.top - popup.offsetHeight / 2 + rect.height / 2 + "px";
+            popup.style.left = rect.left + rect.width / 2 - popup.offsetWidth / 2 + "px";
+        });
 
-        popup.style.display = "block";
-        popup.style.top =
-    window.scrollY + rect.top - popup.offsetHeight / 2 + rect.height / 2 + "px";
-
-popup.style.left =
-    rect.left + rect.width / 2 - popup.offsetWidth / 2 + "px";
-
+        document.addEventListener("click", function (e) {
+            if (!popup.contains(e.target) && e.target !== btn) {
+                popup.style.display = "none";
+            }
+        });
     });
-
-    document.addEventListener("click", function (e) {
-        if (!popup.contains(e.target) && e.target !== btn) {
-            popup.style.display = "none";
-        }
-    });
-});
-</script>
-
+    </script>
 </head>
 
+<body>
 
-    <body>
-    <!-- Dark Mode -->
-    <button id="darkToggle" class="dark-toggle" aria-label="Toggle dark mode">
-        🌙 Dark Mode
-    </button>
+<!-- Dark Mode -->
+<button id="darkToggle" class="dark-toggle" aria-label="Toggle dark mode">
+    🌙 Dark Mode
+</button>
 
-    <main class="container">
+<main class="container">
 
-        <!-- Header -->
-        <header class="header card">
-            <div class="header-left">
-                <h1>Prasun Adhikari</h1>
-                <p class="tagline">
-                    Front-End Developer | React Enthusiast | BCA Student
-                </p>
-                <p class="contact-info">
-                    Gangtok, Sikkim (Temp) | Jhapa, Nepal (Permanent)<br>
-                    📞 +91 8509500314 | +977 9825988602<br>
-                    ✉️ bprasun44@gmail.com
-                </p>
-            </div>
+<!-- Header -->
+<header class="header card">
+    <div class="header-left">
+        <h1>Prasun Adhikari</h1>
+        <p class="tagline">
+            Front-End Developer | React Enthusiast | BCA Student
+        </p>
+        <p class="contact-info">
+            Gangtok, Sikkim (Temp) | Jhapa, Nepal (Permanent)<br>
+            📞 +91 8509500314 | +977 9825988602<br>
+            ✉️ bprasun44@gmail.com
+        </p>
+    </div>
 
-            <div class="header-right">
-                <img src="profile.jpg" alt="Profile photo of Prasun Adhikari">
-            </div>
-        </header>
+    <div class="header-right">
+        <img src="profile.jpg" alt="Profile photo of Prasun Adhikari">
+    </div>
+</header>
 
-    <hr>
+<hr>
 
+<!-- About Me -->
+<section class="card">
+    <h2>About Me</h2>
+    <p>
+        I am a Front-End Developer and BCA student with hands-on experience in building responsive, user-friendly websites using HTML, CSS, JavaScript, and React. 
+        I have worked on real-world projects including Nexon Logistics and TechFest SRMUS, where I contributed to UI development, performance optimization, and modern web design. 
+        I am passionate about clean code, great user experiences, and continuously improving my skills.
+    </p>
+</section>
+
+<!-- Education -->
+<section class="card">
+    <h2>Education</h2>
+
+    <p>
+        <strong>Bachelor of Computer Applications (BCA)</strong><br>
+        SRM University, Sikkim<br>
+        June 2023 - May 2026<br>
+        CGPA: 8.6
+    </p>
+
+    <p>
+        <strong>Senior Secondary (SLC)</strong><br>
+        Kanchanjunga Higher Secondary School, Jhapa, Nepal<br>
+        2021-2022<br>
+        Percentage: 70%
+    </p>
+
+    <p>
+        <strong>Secondary Education (SEE)</strong><br>
+        Shree Rastriya Ramaniya Adarsha Secondory School, Jhapa, Nepal<br>
+        SEE - 2020<br>
+        Percentage: 82%
+    </p>
+</section>
+
+<!-- Work Experience -->
+<section class="card">
     <h2>Work Experience</h2>
+
     <p>
         <strong>Front-End Developer Intern (Remote)</strong><br>
         Nexon Logistics<br>
         Dec 2025 - Jan 2026
     </p>
+
     <ul>
-        <li>Worked on front-end development projects</li>
-        <li>Designed and developed user-friendly interfaces</li>
-        <li>Assisted in optimizing web applications</li>
-        <li>Collaborated with the development team</li>
+        <li>Developed responsive user interfaces using modern front-end tools</li>
+        <li>Collaborated with developers to improve UI/UX consistency</li>
+        <li>Optimized components for better performance and usability</li>
+        <li>Worked with version control systems (Git)</li>
     </ul>
+</section>
 
-
-     <!-- Education -->
-        <section class="card">
-            <h2>Education</h2>
-
-            <p>
-                <strong>Bachelor of Computer Applications (BCA)</strong><br>
-                SRM University, Sikkim<br>
-                June 2023 - May 2026<br>
-                CGPA: 8.6
-            </p>
-
-            <p>
-                <strong>Senior Secondary (SLC)</strong> <br>
-                Kanchung Higher Secondary School, Jhapa, Nepal <br>
-                2021-2022 <br>
-                Percentage: 70%
-            </p>
-            <p>
-                <strong>Secondary Education (SEE)</strong> <br>
-                Shree Rastriya Ramaniya Adarsha Uchha Madhyamik Vidhyalaya, Jhapa, Nepal <br>
-                SEE - 2020 <br>
-                Percentage: 82%
-            </p>
-        </section>
-
-    <!-- Experience -->
-        <section class="card">
-            <h2>Work Experience</h2>
-
-            <p>
-                <strong>Front-End Developer Intern (Remote)</strong><br>
-                Nexon Logistics<br>
-                Dec 2025 – Jan 2026
-            </p>
-
-            <ul>
-                <li>Developed responsive user interfaces using modern front-end tools</li>
-                <li>Collaborated with developers to improve UI/UX consistency</li>
-                <li>Optimized components for better performance and usability</li>
-                <li>Worked with version control systems (Git)</li>
-            </ul>
-        </section>
-        <!-- Projects -->
-        <section class="card">
-            <h2>Projects</h2>
-
-            <p>
-                <strong>TechFest SRMUS Website</strong> —
-                <a href="https://www.techfestsrmus.in" target="_blank" rel="noopener noreferrer">
-                    Visit Website
-                </a><br>
-                Role: Web Development Helper (Individual)
-            </p>
-
-            <ul>
-                <li>Assisted in implementing front-end features</li>
-                <li>Worked with React components and layouts</li>
-                <li>Ensured responsive design across devices</li>
-            </ul>
-
-            <p>
-                <strong>Nexon Logistics Website</strong> —
-                <a href="https://www.nexonlogistics.com" target="_blank" rel="noopener noreferrer">
-                    Visit Website
-                </a><br>
-                Role: Web Development Intern
-            </p>
-
-            <ul>
-                <li>Front-End Development & UI Design</li>
-                <li>Application Optimization & Performance Improvement</li>
-                <li>Team Collaboration & Professional Practice</li>
-            </ul>
-        </section>
-
-
-   <!-- Technical Skills -->
-        <section class="card">
-            <h2>Technical Skills</h2>
-
-            <ul class="skills-list">
-                <li><strong>Programming:</strong> C, Java, Python, JavaScript</li>
-                <li><strong>Web:</strong> HTML, CSS, React, Bootstrap</li>
-                <li><strong>Databases:</strong> MySQL, MongoDB</li>
-                <li><strong>Tools:</strong> Git, VS Code, MS Office</li>
-            </ul>
-        </section>
-
-
-    <!-- Soft Skills -->
-        <section class="card">
-            <h2>Soft Skills</h2>
-
-            <ul class="soft-skills">
-                <li>Effective Communication</li>
-                <li>Problem Solving</li>
-                <li>Time Management</li>
-                <li>Team Collaboration</li>
-                <li>Quick Learner</li>
-            </ul>
-        </section>
-
-     <!-- Certifications -->
+<!-- Projects -->
 <section class="card">
-    <h2>Certifications</h2>
+    <h2>Projects</h2>
 
     <p>
-        Front-End Developer Internship —
-        <a href="https://nexonlogistics.com" target="_blank" rel="noopener noreferrer">
-            Nexon Logistics
-        </a>
-        |
-        <a href="javascript:void(0)" id="viewCert">Click to view</a>
+        <strong>TechFest SRMUS Website</strong> —
+        <a href="https://www.techfestsrmus.in" target="_blank">Visit Website</a><br>
+        Role: Web Development Helper (Individual)
+    </p>
 
+    <ul>
+        <li>Assisted in implementing front-end features</li>
+        <li>Worked with React components and layouts</li>
+        <li>Ensured responsive design across devices</li>
+    </ul>
+
+    <p>
+        <strong>Nexon Logistics Website</strong> —
+        <a href="https://www.nexonlogistics.com" target="_blank">Visit Website</a><br>
+        Role: Web Development Intern
+    </p>
+
+    <ul>
+        <li>Front-End Development & UI Design</li>
+        <li>Application Optimization & Performance Improvement</li>
+        <li>Team Collaboration & Professional Practice</li>
+    </ul>
+</section>
+
+<!-- Technical Skills -->
+<section class="card">
+    <h2>Technical Skills</h2>
+    <ul class="skills-list">
+        <li><strong>Programming:</strong> C, Java, Python, JavaScript</li>
+        <li><strong>Web:</strong> HTML, CSS, React, Bootstrap</li>
+        <li><strong>Databases:</strong> MySQL, MongoDB</li>
+        <li><strong>Tools:</strong> Git, VS Code, MS Office</li>
+    </ul>
+</section>
+
+<!-- Soft Skills -->
+<section class="card">
+    <h2>Soft Skills</h2>
+    <ul class="soft-skills">
+        <li>Effective Communication</li>
+        <li>Problem Solving</li>
+        <li>Time Management</li>
+        <li>Team Collaboration</li>
+        <li>Quick Learner</li>
+    </ul>
+</section>
+
+<!-- Certifications -->
+<section class="card">
+    <h2>Certifications</h2>
+    <p>
+        Front-End Developer Internship —
+        <a href="https://nexonlogistics.com" target="_blank">Nexon Logistics</a> |
+        <a href="javascript:void(0)" id="viewCert">Click to view</a>
     </p>
 </section>
 
-<!-- Certificate Popup -->
 <div id="certModal" class="cert-inline">
     <img src="Internship_nexon.png" alt="Internship Certificate">
 </div>
 
-
-
-    <!-- Contact Information -->
-     <section class="card">
+<!-- Contact -->
+<section class="card">
     <h2>Contact</h2>
-
-<div class="contact">
-    <a href="https://www.linkedin.com/in/prasun-adhikari-2021723a1" target="_blank">
-        <i class="fab fa-linkedin"></i>
-        LinkedIn
-    </a>
-
-    <a href="mailto:bprasu44@gmail.com">
-        <i class="fas fa-envelope"></i>
-        Email
-    </a>
-
-    <a href="https://wa.me/918509500314" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-        WhatsApp
-    </a>
-
-    <a href="https://instagram.com/wtf.prasun" target="_blank">
-        <i class="fab fa-instagram"></i>
-        Instagram
-    </a>
-
-    <a href="https://github.com/prasunwtf" target="_blank">
-        <i class="fab fa-github"></i>
-        GitHub
-    </a>
-</div>
-     </section>
-
-<!-- Resume Download -->
-        <section class="card resume-download">
-            <a href="Prasun_Adhikari_Resume.pdf" download>
-                <i class="fas fa-file-download"></i>
-                Download Resume (PDF)
-            </a>
-        </section>
-
-    </main>
+    <div class="contact">
+        <a href="https://www.linkedin.com/in/prasun-adhikari-2021723a1" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="mailto:bprasu44@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+        <a href="https://wa.me/918509500314" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="https://instagram.com/wtf.prasun" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://github.com/prasunwtf" target="_blank"><i class="fab fa-github"></i> GitHub</a>
     </div>
+</section>
 
-    <script>
-    const toggleBtn = document.getElementById("darkToggle");
-    const body = document.body;
+<!-- Resume -->
+<section class="card resume-download">
+    <a href="myresume.pdf" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-file-download"></i> View Resume (PDF)
+    </a>
+</section>
 
-    // Load saved mode
-    if (localStorage.getItem("theme") === "dark") {
-        body.classList.add("dark");
+
+<section class="card resume-download">
+    <a href="myresume.pdf" download>
+        <i class="fas fa-file-download"></i> Download Resume (PDF)
+    </a>
+</section>
+
+</main>
+
+<script>
+const toggleBtn = document.getElementById("darkToggle");
+const body = document.body;
+
+if (localStorage.getItem("theme") === "dark") {
+    body.classList.add("dark");
+    toggleBtn.textContent = "☀️ Light Mode";
+}
+
+toggleBtn.addEventListener("click", () => {
+    body.classList.toggle("dark");
+    if (body.classList.contains("dark")) {
+        localStorage.setItem("theme", "dark");
         toggleBtn.textContent = "☀️ Light Mode";
+    } else {
+        localStorage.setItem("theme", "light");
+        toggleBtn.textContent = "🌙 Dark Mode";
     }
-
-    toggleBtn.addEventListener("click", () => {
-        body.classList.toggle("dark");
-
-        if (body.classList.contains("dark")) {
-            localStorage.setItem("theme", "dark");
-            toggleBtn.textContent = "☀️ Light Mode";
-        } else {
-            localStorage.setItem("theme", "light");
-            toggleBtn.textContent = "🌙 Dark Mode";
-        }
-    });
+});
 </script>
-
 
 </body>
 </html>
