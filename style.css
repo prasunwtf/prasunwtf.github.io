@@ -375,20 +375,51 @@ body.dark .contact a:hover {
 }
 
 
- /* Certificate Popup Styles */
+/* Certificate Popup Styles */
 
-       .cert-inline {
+.cert-inline {
     display: none;
-    position: absolute;
-    width: 480px;
+    position: fixed; /* stays centered on screen */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 90%;
+    max-width: 800px;
+
     background: #fff;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    padding: 15px;
+    border-radius: 15px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
     z-index: 1000;
+
+    animation: popupFade 0.3s ease;
 }
 
 .cert-inline img {
     width: 100%;
-    border-radius: 8px;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+/* Popup Animation */
+@keyframes popupFade {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -45%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .cert-inline {
+        width: 95%;
+        padding: 10px;
+    }
 }
